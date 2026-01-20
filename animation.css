@@ -3,25 +3,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Crucial: Padding doesn't expand boxes */
+    /* Padding doesn't expand boxes */
 }
 
 body {
-    /* This applies the font to the entire website */
     font-family: 'Inter', sans-serif;
     color: #1a1a1a;
     background-color: #ffff;
     line-height: 1.5;
 }
 
-/* Update these sections in style.css */
-
 .hero {
     text-align: center;
     padding: 60px 20px 20px;
-    /* Increased bottom padding */
-
-    /* FIX: Allow the container to use 100% of the screen width */
     max-width: 100%;
     width: 100%;
     margin: 0 auto;
@@ -29,31 +23,27 @@ body {
 
 .hero h1 {
     font-family: 'Inter', sans-serif;
-
-    /* FIX: Make font HUGE */
     font-size: 3.8rem;
 
-    font-weight: 650;
+    font-weight: 700;
     line-height: 1;
     letter-spacing: -1.1px;
     /* Tight style */
     color: #1a1a1a;
     margin-bottom: 24px;
 
-    /* FIX: Allow text to span much wider (1400px) */
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* This makes the word "Animation" blue */
 .highlight {
     color: #276FF5;
 }
 
 a {
     text-decoration: none;
-    /* REMOVES underlines from all links */
+    /* no underline */
     color: inherit;
     cursor: pointer;
 }
@@ -86,7 +76,6 @@ a {
 
 .logo-link {
     display: flex;
-    /* Removes weird gaps below images */
     align-items: center;
     margin-right: 0px;
 }
@@ -94,7 +83,6 @@ a {
 .nav-logo-img {
     width: 26px;
     height: auto;
-    /* Keeps the aspect ratio correct */
     display: block;
     margin-left: 35px;
 }
@@ -108,12 +96,9 @@ a {
 
 /* --- DROPDOWN LOGIC --- */
 
-/* 1. The Parent Item (e.g., "Product") */
 .nav-item {
     position: relative;
-    /* for positioning the dropdown below it */
     padding: 10px 0;
-    /* Adds a "safe zone" so mouse doesn't slip off */
 }
 
 .nav-item>a {
@@ -127,18 +112,17 @@ a {
     color: #000000;
 }
 
-/* 2. The Dropdown Box (Hidden by default) */
 .dropdown-menu {
     display: none;
-    /* Hidden! */
+    /* Hidden */
     position: absolute;
     top: 100%;
-    /* Pushes it exactly below the parent */
+    /*exactly below the parent element*/
     left: 0;
     background-color: white;
     min-width: 180px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* Nice floaty shadow */
+    /* shadow */
     border-radius: 8px;
     border: 1px solid #eee;
     padding: 10px 0;
@@ -149,15 +133,13 @@ a {
 .nav-item.active .dropdown-menu {
     display: block;
     animation: fadeIn 0.2s ease;
-    /* Optional: Makes it pop in smoothly */
 }
 
-/* Rotate the little arrow */
+/* to rotate the arrow */
 .nav-item.active .chevron {
     transform: rotate(180deg);
 }
 
-/* 4. Dropdown Links Styling */
 .dropdown-menu li a {
     display: block;
     padding: 10px 20px;
@@ -168,7 +150,6 @@ a {
 
 .dropdown-menu li a:hover {
     background-color: #eeecec;
-    /* Webflow blue */
 }
 
 /* --- BUTTONS --- */
@@ -183,22 +164,17 @@ a {
     color: #1a1a1a;
     font-weight: lighter;
 
-    /* 1. PREPARE THE SPACE (So it doesn't jump) */
     padding: 8px 16px;
     border-radius: 4px;
-    /* Rounded corners */
     font-size: 0.9rem;
 
-    /* 2. INVISIBLE BORDER (Optional, helps alignment) */
     border: 1px solid transparent;
 
     transition: all 0.2s ease;
 }
 
-/* 3. THE HOVER EFFECT */
 .nav-link-box:hover {
     background-color: #f5f5f5;
-    /* Light grey box appears */
 }
 
 .btn-primary {
@@ -242,7 +218,6 @@ a {
 
 /* ================= HERO SECTION ================= */
 
-/* --- Made in Webflow Badge --- */
 .badge-container {
     display: flex;
     justify-content: center;
@@ -275,14 +250,11 @@ a {
 
 .highlight-link {
     color: #276FF5;
-    /* The specific Webflow blue */
     text-decoration: none;
-    /* Ensures no underline by default */
     font-weight: 400;
-    /* Keeps it normal weight, not bold */
     margin-left: 4px;
-    /* Adds a tiny space before it starts */
     transition: color 0.2s ease;
+    /*to add tiny space before it starts*/
 }
 
 .highlight-link:hover {
@@ -299,7 +271,7 @@ a {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* Wraps tags to next line on mobile */
+
     max-width: 1200px;
     margin: 10px auto;
     gap: 8px;
@@ -310,6 +282,7 @@ a {
     border: 1px solid #f0f0f0;
     border-radius: 4px;
     /* Pill shape */
+
     font-size: 0.9rem;
     color: #000000;
     cursor: pointer;
@@ -337,45 +310,38 @@ a {
     padding: 44px 0px 100px;
 }
 
-/* REPLACE YOUR EXISTING .gallery-subheader SECTION WITH THIS */
-
 .gallery-subheader {
     display: flex;
     justify-content: space-between;
-    /* Pushes Left Group to Left, Button to Right */
-    align-items: center;
 
-    /* Matches the width of your Gallery Grid so edges align */
+    align-items: center;
     width: 100%;
     max-width: 1500px;
 
     margin: 0 auto 10px auto;
-    /* Centers the whole bar on the page */
+    /* to center the whole bar on the page */
     padding: 0 10px;
-    /* Adds small breathing room on mobile */
+
     position: relative;
     z-index: 10;
     margin-bottom: 50px;
 }
 
-/* NEW: Groups the Dropdown and Toggle together */
 .subheader-left {
     display: flex;
     align-items: center;
     gap: 30px;
-    /* Space between "Popular" and the "Toggle" */
 }
 
-/* Ensure the Toggle Text looks good */
 .toggle-text {
     margin-left: 8px;
     font-size: 0.9rem;
     color: #555;
     white-space: nowrap;
-    /* Prevents text from wrapping */
+    /* to prevent text from wrapping */
 }
 
-/* Responsive Fix: On mobile, stack them */
+/* for mobile */
 @media (max-width: 768px) {
     .gallery-subheader {
         flex-direction: column;
@@ -394,51 +360,43 @@ a {
     }
 }
 
-/* --- The Popular Dropdown --- */
+/* --- "Popular" Dropdown --- */
 .sort-dropdown {
     position: relative;
-    /* Anchor for the hidden menu */
     display: inline-block;
 }
 
 .sort-btn {
     background: white;
-    /* White background */
     border: 1px solid #e0e0e0;
-    /* The Grey Rectangle Border */
     border-radius: 4px;
-    /* Rounded corners */
 
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
-    /* Reduced size to fit in the box */
     font-weight: 500;
-    /* Regular weight, not super bold */
-    color: #1a1a1a;
 
+    color: #1a1a1a;
     padding: 10px 16px;
-    /* Creates space inside the rectangle */
+
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Space between text and arrow */
+
     transition: all 0.2s;
 
     min-width: 140px;
-    /* Optional: Makes it look uniform */
     justify-content: space-between;
 }
 
 .sort-btn:hover {
     background-color: #e6e3e3;
-    /* Darker border on hover */
 }
 
 .chevron {
     font-size: 1rem;
-    color: #276FF5;
-    /* Blue arrow */
+    color: #000000;
+
     transition: transform 0.2s;
 }
 
@@ -488,31 +446,25 @@ a {
     align-items: center;
 
     border: 1px solid #e0e0e0;
-    /* The Grey Rectangle Border */
     border-radius: 4px;
     padding: 8px 16px;
-    /* Matches the Popular button padding */
+
     background: white;
 
     gap: 12px;
     height: 100%;
-    /* Ensures it aligns with the button next to it */
+    /* to align with the button next to it */
     cursor: pointer;
     transition: border-color 0.2s;
 }
 
-.filter-toggles:hover {
-    border-color: #a8a8a8;
-}
 
-/* Ensure the text inside is styled correctly */
 .toggle-text {
     font-size: 0.9rem;
     color: #1a1a1a;
     font-weight: 500;
 }
 
-/* Making the checkbox look like a Switch */
 .toggle-label {
     position: relative;
     width: 40px;
@@ -552,17 +504,15 @@ a {
 
 input:checked+.slider {
     background-color: #276FF5;
-    /* Blue when on */
 }
 
 input:checked+.slider:before {
     transform: translateX(18px);
-    /* Move circle to right */
+    /* to move circle to right */
 }
 
 .gallery-grid {
     display: grid;
-    /* RESPONSIVE MAGIC: Fits as many 320px cards as possible */
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 8px 24px;
 }
@@ -586,20 +536,16 @@ input:checked+.slider:before {
 .card-image {
     width: 100%;
     height: 260px;
-    /* Or whatever height you set */
     background-color: #f5f5f5;
     overflow: hidden;
-    /* CRITICAL: Prevents image from spilling out */
     position: relative;
 }
 
-/* to style the "View Details" Button (Hidden by default) */
 .overlay-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -40%);
-    /* Starts slightly lower */
 
     background-color: white;
     color: #1a1a1a;
@@ -609,12 +555,9 @@ input:checked+.slider:before {
     font-weight: 600;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
-    /* TO HIDE IT INITIALLY */
     opacity: 0;
     pointer-events: none;
-    /* to prevent clicking it when hidden */
 
-    /* SMOOTH ANIMATION */
     transition: all 0.3s ease;
 }
 
@@ -624,7 +567,6 @@ input:checked+.slider:before {
     pointer-events: auto;
 }
 
-/* 2. Style the Image itself */
 .card-image img {
     width: 100%;
     height: 100%;
@@ -632,11 +574,11 @@ input:checked+.slider:before {
 
     /* Smooth transition for the zoom */
     transition: transform 0.2s ease, filter 0.2s ease;
-    /* Set default brightness */
+    /* default brightness */
     filter: brightness(1);
 }
 
-/* 3. ZOOM EFFECT: When you hover the CARD, scale the IMAGE */
+/* to zoom the card on hover */
 .card-image:hover img {
     transform: scale(1.03);
     filter: brightness(0.85);
@@ -645,26 +587,23 @@ input:checked+.slider:before {
 .card-header-row {
     display: flex;
     align-items: center;
-    /* Aligns them vertically */
+    /* to align them vertically */
     gap: 8px;
     /* Space between icon and text */
 }
 
-/* Style the User Icon */
 .user-icon {
     width: 28px;
-    /* Size of the circle logo */
     height: 28px;
     border-radius: 50%;
-    /* Makes it a perfect circle */
+    /* Makes it a circle */
     object-fit: cover;
 }
 
-/* Style the Title and Author */
 .header-text h3 {
     font-size: 0.85rem;
     font-weight: bold;
-    /* Bold title */
+
     color: #1a1a1a;
     line-height: 1;
     margin-bottom: 2px;
@@ -677,7 +616,6 @@ input:checked+.slider:before {
     font-weight: 400;
 }
 
-/* Push the Likes to the far right */
 .likes-container {
     margin-left: auto;
     /* Pushes it to the right edge */
@@ -691,7 +629,7 @@ input:checked+.slider:before {
 }
 
 /* ================= MOBILE RESPONSIVENESS ================= */
-/* This CSS runs ONLY on screens smaller than 768px (Tablets/Phones) */
+/* runs ONLY on screens smaller than 768px (Tablets/Phones) */
 @media (max-width: 768px) {
 
     .nav-links,
@@ -732,11 +670,11 @@ input:checked+.slider:before {
 
 .search-wrapper:focus-within {
     border-color: #276FF5;
-    /* Turns blue when you click to type */
+    /* Turns blue when typing */
 }
 
 .search-icon {
-    margin-right: 12px;
+    margin-right: 6px;
     /* Space between icon and text */
     flex-shrink: 0;
 }
@@ -744,7 +682,7 @@ input:checked+.slider:before {
 .search-input {
     border: none;
     outline: none;
-    /* Removes default browser outline */
+
     font-size: 1rem;
     color: #333;
     width: 100%;
@@ -760,7 +698,7 @@ input:checked+.slider:before {
     /* Space between the last row of cards and the button */
     display: flex;
     justify-content: center;
-    /* Centers the button horizontally */
+    /* to center the button horizontally */
     width: 100%;
 }
 
@@ -783,12 +721,9 @@ input:checked+.slider:before {
     width: auto;
 }
 
-/* Hover Effect */
 .btn-outline:hover {
     border-color: #a8a8a8;
-    /* Border gets darker */
     background-color: #f5f5f5;
-    /* Light grey background appears */
 }
 
 /* ================= MOBILE RESPONSIVENESS ================= */
@@ -812,7 +747,6 @@ input:checked+.slider:before {
         display: none;
         /* Hidden by default */
 
-        /* Layout: Stack vertical instead of horizontal */
         flex-direction: column;
 
         /* Positioning: Force it to sit below the navbar */
@@ -827,13 +761,12 @@ input:checked+.slider:before {
         border-bottom: 1px solid #e0e0e0;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
         gap: 0;
-        /* Remove default gap */
     }
 
-    /* 4. THE MAGIC CLASS: This runs when JS adds "active" */
+    /* 4. This runs when JS adds "active" */
     .nav-links.active {
         display: flex;
-        /* Shows the menu! */
+        /* Shows the menu */
     }
 
     /* 5. Style the individual links for mobile touch targets */
@@ -844,13 +777,10 @@ input:checked+.slider:before {
         border-bottom: 1px solid #f5f5f5;
     }
 
-    /* Reset the hover logic for mobile so dropdowns don't float weirdly */
     .nav-item:hover .dropdown-menu {
         display: none;
-        /* Optional: Keep sub-menus hidden on mobile for simplicity */
     }
 }
-
 
 /* --- FOOTER STYLES --- */
 
@@ -872,17 +802,14 @@ input:checked+.slider:before {
     /* 4 Column Grid */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr auto;
-    /* 4th col is narrower */
     gap: 40px;
     align-items: start;
     /* Ensures columns don't stretch height */
 }
 
 .social-col {
-    /* Pushes this column to the right edge */
     margin-left: auto;
     margin-right: 50px;
-    /* Optional: Ensure text/icons align nicely */
     text-align: left;
 }
 
@@ -891,9 +818,7 @@ input:checked+.slider:before {
 .footer-group h4 {
     font-size: 0.95rem;
     font-weight: 700;
-    /* Bold */
     color: #1a1a1a;
-    /* Black text */
     margin-bottom: 20px;
     margin-top: 0;
 }
@@ -907,24 +832,19 @@ input:checked+.slider:before {
 
 .footer-col ul li {
     margin-bottom: 14px;
-    /* Spacing between links */
 }
 
 .footer-col ul li a {
     text-decoration: none;
     color: #6f6e6e;
-    /* Dark Grey */
     font-size: 0.9rem;
     transition: color 0.2s ease;
 }
 
 .footer-col ul li a:hover {
     color: #000;
-    /* Black on hover */
 }
 
-/* SPACING FOR "TERMS" SECTION */
-/* This pushes the Terms section down from the Company section */
 .spacing-top {
     margin-top: 50px;
 }
@@ -933,30 +853,99 @@ input:checked+.slider:before {
 .social-icons-vertical {
     display: flex;
     flex-direction: column;
-    /* Stacks them vertically */
     gap: 13px;
-    /* Space between icons */
 }
 
 .social-icons-vertical a img {
     width: 19px;
-    /* Size of the icons */
     height: 18px;
     opacity: 1;
-    /* Greyish default state */
     transition: opacity 0.2s;
 }
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+
     .footer-container {
         grid-template-columns: 1fr;
-        /* Stack everything in 1 column */
         gap: 50px;
+        padding-bottom: 40px;
+    }
+
+    .footer-col ul,
+    .footer-col .link-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
     }
 
     .social-icons-vertical {
         flex-direction: row;
-        /* Horizontal icons on mobile */
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 480px) {
+    .navbar {
+        /* Change 40px to 20px (or even 10px) to push logo left */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .tags-container {
+        display: flex;
+        flex-wrap: nowrap;
+
+        overflow-x: auto;
+
+        gap: 10px;
+        padding-bottom: 10px;
+
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .tags-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tag {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .overlay-btn {
+        display: none !important;
+        pointer-events: none;
+    }
+
+    .card-image {
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+        padding: 12px 0;
+        box-sizing: border-box;
+    }
+
+    .subheader-left {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
